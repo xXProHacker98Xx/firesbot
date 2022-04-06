@@ -7,8 +7,11 @@ client.login(process.env.token)
 client.on("ready", () => {
     console.log("Bot ONLINE")
     client.user.setPresence({
-        status: "STA GUARDANDO ZFENYYX"
-    })
+        status: "Online"
+        game: {
+            type: "STA GUARDANDO ZFENYYX"
+        }
+    });
 });
 
 client.on("messageCreate", message => {
