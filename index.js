@@ -6,13 +6,23 @@ client.login(process.env.token)
 
 client.on("ready", () => {
     console.log("Bot ONLINE")
-    client.user.setPresence({
-        status: "Online"
-        game: {
-            name: "Buona visione",
-            type: "STA GUARDANDO ZFENYYX"
-        }
-    });
+    const updatePresence = async (client, state) => {
+        // Set the presence
+        const activity = {
+            name: 'Notizie',
+            type: 'STA GUARDANDO ZFENYYX',
+            details: 'https://discord.com/invite/KPFTDd7NhB',
+            state: state,
+            timestamps: {
+                start: Date.now(),
+            },
+         };
+        client.user.setPresence({
+            pid: process.pid,
+            activity: activity,
+            status: 'online',
+        });
+    };
 });
 
 client.on("messageCreate", message => {
