@@ -9,6 +9,7 @@ client.on("ready", () => {
     client.user.setPresence({
         status: "Online"
         game: {
+            name: "Buona visione",
             type: "STA GUARDANDO ZFENYYX"
         }
     });
