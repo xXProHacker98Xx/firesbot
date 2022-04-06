@@ -10,7 +10,7 @@ client.on("ready", () => {
         // Set the presence
         const activity = {
             name: 'Notizie',
-            type: 'Watching',
+            type: 'Sta guardando zFenyyx',
             details: 'https://discord.com/invite/KPFTDd7NhB',
             state: state,
             timestamps: {
