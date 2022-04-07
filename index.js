@@ -16,4 +16,9 @@ client.on("messageCreate", message => {
     if (message.content == "!spotify") {
         message.channel.send("Questa è la playlist di fenyx: https://open.spotify.com/playlist/0E0u0bHwzFolFaes7uG41v?si=b91dd9b07111471f")
     }
+
+    if (message.content == "!ticket") {
+        message.channel.send("Clicca sulla reazione per aprire un ticket")
+        .then(msg => msg.react("📩"))
+    }
 });
