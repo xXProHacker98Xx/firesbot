@@ -6,7 +6,7 @@ module.exports = {
     async execute(message, args, cmd, client, discord) {
       const channel = await message.guild.channels.create(`ticket: ${message.author.tag}`);
       
-      channel.setParent("926454759404236840");
+      channel.setParent("961663978034040853");
   
       channel.updateOverwrite(message.guild.id, {
         SEND_MESSAGE: false,
