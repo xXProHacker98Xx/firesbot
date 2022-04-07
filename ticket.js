@@ -45,8 +45,7 @@ module.exports = {
       });
   
       message.channel
-        .send(`Siamo sempre a disposizione! ${channel}`)
-        .then((msg) => {
+        .send(`Siamo sempre a disposizione! ${channel}`).then((msg) => {
           setTimeout(() => msg.delete(), 7000);
           setTimeout(() => message.delete(), 3000);
         })
