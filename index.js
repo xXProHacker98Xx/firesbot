@@ -11,18 +11,23 @@ client.on("ready", () => {
         url: "https://www.twitch.tv/zfenyyx"
     });
 });
-
-client.on("guildMemberAdd", (member) => {
-    let channelId = "962419220241604678";
-    if(member.guild.id != "962419220241604678") return;
-    let embed = new Discord.MessageEmbed()
-    .setTitle(`Utente Entrato!!`)
-    .setDescription(`${member.user.tag} Ciao arissimo e benvenuto tra di noi`)
-    .setColor("ORANGE")
-    .setTimestamp()
-    channelId.send(embed)
-});
-
+client.on('guildMemberAdd', async(member) => {
+    const Channel = member.guild.channels.cache.get('962419220241604678')
+    const embed = new MessageEmbed()
+        .setColor('ORANGE')
+        .setTitle('New Member')
+        .setDescription(`**${member.displayName}** ciao carissimo e benvenuto tra di noi ${member.guild.name}, sei il ${member.guild.memberCount} membro!`)
+    Channel.send(embed)
+})
+client.on('guildMemberRemove', async(member) => {
+    const Channel = member.guild.channels.cache.get('962419220241604678')
+    const embed = new MessageEmbed()
+        .setColor('RED')
+        .setTitle('A member left the server :(')
+        .setDescription(`**${member.displayName}** ha disertato, riportatelo al fronte con noi`)
+    // sends a message to the channel
+    Channel.send(embed)
+})
 client.on("messageCreate", message => {
     if (message.content == "!twitch") {
         message.channel.send("@everyone Fenyx è in live con una nuovissima cacata pazzurdissimerrima: https://www.twitch.tv/zfenyyx")
