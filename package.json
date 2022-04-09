@@ -9,6 +9,7 @@
   "author": "Gioffry0",
   "license": "ISC",
   "dependencies": {
+    "canvacord": "^5.2.3",
     "discord.js": "^13.6.0"
   }
 }

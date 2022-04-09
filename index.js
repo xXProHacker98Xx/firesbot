@@ -19,13 +19,13 @@ client.on("guildMemberAdd", async member => {
   .setUsername(member.user.username)
   .setDiscriminator(member.user.discriminator)
   .setAvatar(member.user.displayAvatarURL({ format: "png" }))
-  .setColor("title", "#FEFCFC") //white
-  .setColor("username-box", "#FEFCFC") //white
-  .setColor("discriminator-box", "#FEFCFC") //white
-  .setColor("message-box", "#FEFCFC") //white
-  .setColor("border", "#000000") //black
-  .setColor("avatar", "#FEFCFC") //white
-  .setBackground("your bg image") //should be png format
+  .setColor("title", "#FEFCFC")
+  .setColor("username-box", "#FEFCFC")
+  .setColor("discriminator-box", "#FEFCFC")
+  .setColor("message-box", "#FEFCFC")
+  .setColor("border", "#000000")
+  .setColor("avatar", "#FEFCFC")
+  .setBackground("https://cdn.discordapp.com/attachments/883825671888060456/962442498704306246/unknown.png")
   .setMemberCount(member.guild.memberCount)
   let attachment = new Discord.MessageAttachment(await welcomeCard.build(), "welcome.png")
   member.guild.channels.cache.get("channel id").send(member.user.toString(), attachment)
