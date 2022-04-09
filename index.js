@@ -11,6 +11,7 @@ client.on("ready", () => {
         url: "https://www.twitch.tv/zfenyyx"
     });
 });
+
 client.on("guildMemberAdd", (member) => {
     let channelId = "962419220241604678";
     if(member.guild.id != "962419220241604678") return;
