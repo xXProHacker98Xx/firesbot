@@ -20,7 +20,8 @@ client.on("guildMemberAdd", (member) => {
     .setColor("ORANGE")
     .setTimestamp()
     channelId.send(embed)
-})
+});
+
 client.on("messageCreate", message => {
     if (message.content == "!twitch") {
         message.channel.send("@everyone Fenyx è in live con una nuovissima cacata pazzurdissimerrima: https://www.twitch.tv/zfenyyx")
