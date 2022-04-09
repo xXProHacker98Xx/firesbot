@@ -12,7 +12,7 @@ client.on("ready", () => {
     });
 });
 client.on("guildMemberAdd", (member) => {
-    client.channels.cache.get("962419220241604678").send("Benvenuto");
+    client.channels.cache.get("962419220241604678").send("Benvenuto" ", sei il " + member.guild.memberCount + "° membro");
 })
 client.on("messageCreate", message => {
     if (message.content == "!twitch") {
