@@ -14,7 +14,7 @@ client.on("ready", () => {
 const canvacord = require("canvacord")
 
 client.on("guildMemberAdd", async member => {
-  if(member.guild.id !== "server id") return;
+  if(member.guild.id !== "962419220241604678") return;
   const welcomeCard = new canvacord.Welcomer()
   .setUsername(member.user.username)
   .setDiscriminator(member.user.discriminator)
