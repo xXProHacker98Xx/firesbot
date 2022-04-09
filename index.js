@@ -11,8 +11,24 @@ client.on("ready", () => {
         url: "https://www.twitch.tv/zfenyyx"
     });
 });
-client.on("guildMemberAdd", (member) =>{
-    client.channels.cache.get("962419220241604678").send("Ciao carissimo e benvenuto tra di noi" + member.toString() + " **" + member.guild.name + "**\rSei il **" + member.guild.memberCount + "° membro**");
+const canvacord = require("canvacord")
+
+client.on("guildMemberAdd", async member => {
+  if(member.guild.id !== "server id") return;
+  const welcomeCard = new canvacord.Welcomer()
+  .setUsername(member.user.username)
+  .setDiscriminator(member.user.discriminator)
+  .setAvatar(member.user.displayAvatarURL({ format: "png" }))
+  .setColor("title", "#FEFCFC") //white
+  .setColor("username-box", "#FEFCFC") //white
+  .setColor("discriminator-box", "#FEFCFC") //white
+  .setColor("message-box", "#FEFCFC") //white
+  .setColor("border", "#000000") //black
+  .setColor("avatar", "#FEFCFC") //white
+  .setBackground("your bg image") //should be png format
+  .setMemberCount(member.guild.memberCount)
+  let attachment = new Discord.MessageAttachment(await welcomeCard.build(), "welcome.png")
+  member.guild.channels.cache.get("channel id").send(member.user.toString(), attachment)
 })
 client.on("guildMemberRemove", (member) => {
     client.channels.cache.get("962419220241604678").send( member.toString + " ha disertato,riportatelo al fronte con noi")
