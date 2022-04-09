@@ -11,6 +11,7 @@ client.on("ready", () => {
         url: "https://www.twitch.tv/zfenyyx"
     });
 });
+
 client.on('guildMemberAdd', async(member) => {
     const Channel = member.guild.channels.cache.get('962419220241604678')
     const embed = new MessageEmbed()
@@ -27,7 +28,8 @@ client.on('guildMemberRemove', async(member) => {
         .setDescription(`**${member.displayName}** ha disertato, riportatelo al fronte con noi`)
     // sends a message to the channel
     Channel.send(embed)
-})
+});
+
 client.on("messageCreate", message => {
     if (message.content == "!twitch") {
         message.channel.send("@everyone Fenyx è in live con una nuovissima cacata pazzurdissimerrima: https://www.twitch.tv/zfenyyx")
