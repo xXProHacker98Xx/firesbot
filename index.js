@@ -12,23 +12,13 @@ client.on("ready", () => {
     });
 });
 
-client.on('guildMemberAdd', async(member) => {
-    const Channel = member.guild.channels.cache.get('962419220241604678')
-    const embed = new MessageEmbed()
-        .setColor('ORANGE')
-        .setTitle('New Member')
-        .setDescription(`**${member.displayName}** ciao carissimo e benvenuto tra di noi ${member.guild.name}, sei il ${member.guild.memberCount} membro!`)
-    Channel.send(embed)
+client.on("guildMemberAdd", member => {
+    const canale = member.guild.channels.cache.get(config.canali.welcom);
+    canale.send(`<@${member.id}> Ciao carissimo e benvenuto tra di noi!`)
+
+    const ruolo = member.guild.roles.cache.find(r => r.name === "𝓟𝓲𝓬𝓬𝓲𝓸𝓕𝓲𝓪𝓶𝓶𝓪🐥🔥")
+    member.roles.add(ruolo);
 })
-client.on('guildMemberRemove', async(member) => {
-    const Channel = member.guild.channels.cache.get('962419220241604678')
-    const embed = new MessageEmbed()
-        .setColor('RED')
-        .setTitle('A member left the server :(')
-        .setDescription(`**${member.displayName}** ha disertato, riportatelo al fronte con noi`)
-    // sends a message to the channel
-    Channel.send(embed)
-});
 
 client.on("messageCreate", message => {
     if (message.content == "!twitch") {
