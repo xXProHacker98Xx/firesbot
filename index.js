@@ -21,12 +21,3 @@ client.on("messageCreate", message => {
         message.channel.send("Questa è la playlist di fenyx: https://open.spotify.com/playlist/0E0u0bHwzFolFaes7uG41v?si=b91dd9b07111471f")
     }
 });
-
-const welcomeChannelId = "962419220241604678"
-
-client.on("guildMemberAdd", (member) =>{
-    member.guild.channels.cache.get(welcomeChannelId).send({
-        content: `<@${member.id}> Ciao carissimo e benvenuto tra di noi!`,
-        files: {img}
-    })
-})
