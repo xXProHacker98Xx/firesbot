@@ -11,15 +11,12 @@ client.on("ready", () => {
         url: "https://www.twitch.tv/zfenyyx"
     });
 });
-
-client.on("guildMemberAdd", member => {
-    const canale = member.guild.channels.cache.get(config.canali.welcom);
-    canale.send(`<@${member.id}> Ciao carissimo e benvenuto tra di noi!`)
-
-    const ruolo = member.guild.roles.cache.find(r => r.name === "𝓟𝓲𝓬𝓬𝓲𝓸𝓕𝓲𝓪𝓶𝓶𝓪🐥🔥")
-    member.roles.add(ruolo);
+client.on("guildMemberAdd", (member) =>{
+    client.channels.cache.get("962419220241604678").send("Ciao carissimo e benvenuto tra di noi" + member.toString() + " **" + member.guild.name + "**\rSei il **" + member.guild.memberCount + "° membro**");
 })
-
+client.on("guildMemberRemove", (member) => {
+    client.channels.cache.get("962419220241604678").send( member.toString + " ha disertato,riportatelo al fronte con noi")
+})
 client.on("messageCreate", message => {
     if (message.content == "!twitch") {
         message.channel.send("@everyone Fenyx è in live con una nuovissima cacata pazzurdissimerrima: https://www.twitch.tv/zfenyyx")
