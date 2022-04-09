@@ -14,7 +14,7 @@ client.on("ready", () => {
 const canvacord = require("canvacord")
 
 client.on("guildMemberAdd", async member => {
-  if(member.guild.id !== "962419220241604678") return;
+  if(member.guild.id !== "960188446679396443") return;
   const welcomeCard = new canvacord.Welcomer()
   .setUsername(member.user.username)
   .setDiscriminator(member.user.discriminator)
@@ -28,7 +28,7 @@ client.on("guildMemberAdd", async member => {
   .setBackground("https://cdn.discordapp.com/attachments/883825671888060456/962442498704306246/unknown.png")
   .setMemberCount(member.guild.memberCount)
   let attachment = new Discord.MessageAttachment(await welcomeCard.build(), "welcome.png")
-  member.guild.channels.cache.get("channel id").send(member.user.toString(), attachment)
+  member.guild.channels.cache.get("962419220241604678").send(member.user.toString(), attachment)
 })
 client.on("guildMemberRemove", (member) => {
     client.channels.cache.get("962419220241604678").send( member.toString + " ha disertato,riportatelo al fronte con noi")
