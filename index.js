@@ -12,8 +12,7 @@ client.on("ready", () => {
     });
 });
 client.on("guildMemberAdd", (member) =>{
-    client.channels.cache.get("962419220241604678").send("𝘾𝙞𝙖𝙤 𝙘𝙖𝙧𝙞𝙨𝙨𝙞𝙢𝙤 𝙚 𝙗𝙚𝙣𝙫𝙚𝙣𝙪𝙩𝙤 𝙩𝙧𝙖 𝙙𝙞 𝙣𝙤𝙞
-    𝙇𝙖 𝙩𝙖𝙣𝙖 𝙙𝙚𝙡𝙡𝙚 𝙁𝙚𝙣𝙮𝙘𝙞🔥!" + member.toString() + " benvunuto in **" + member.guild.name + "**\rSei il **" + member.guild.memberCount + "° membro**");
+    client.channels.cache.get("962419220241604678").send("Ciao carissimo e benvenuto tra di noi" + member.toString() + " **" + member.guild.name + "**\rSei il **" + member.guild.memberCount + "° membro**");
 })
 
 client.on("messageCreate", message => {
