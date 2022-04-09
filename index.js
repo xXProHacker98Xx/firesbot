@@ -22,6 +22,7 @@ client.on("messageCreate", message => {
     }
 });
 
+const welcomeChannelId = "962419220241604678"
 client.on("guildMemberAdd", (member) =>{
     member.guild.channels.cache.get(welcomeChannelId).send({
         content: `<@${member.id}> Ciao carissimo e benvenuto tra di noi!`,
