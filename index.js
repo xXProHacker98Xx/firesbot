@@ -11,10 +11,8 @@ client.on("ready", () => {
         url: "https://www.twitch.tv/zfenyyx"
     });
 });
-client.on("guildMemberAdd", async member => ,{
-    let channel = member.guild.channels.cache.find(c => c.name === 'welcome')
-    let WELCOME = new Discord.MessageEmbed().setTitle('Un Nuovo utente è entrato!').setDescription(`${Member.tag} 𝘾𝙞𝙖𝙤 𝙘𝙖𝙧𝙞𝙨𝙨𝙞𝙢𝙤 𝙚 𝙗𝙚𝙣𝙫𝙚𝙣𝙪𝙩𝙤 𝙩𝙧𝙖 𝙙𝙞 𝙣𝙤𝙞
-    𝙇𝙖 𝙩𝙖𝙣𝙖 𝙙𝙚𝙡𝙡𝙚 𝙁𝙚𝙣𝙮𝙘𝙞🔥!`)
+client.on("guildMemberAdd", (member) => {
+    client.channels.cache.get("962419220241604678").send("Benvenuto");
 })
 client.on("messageCreate", message => {
     if (message.content == "!twitch") {
