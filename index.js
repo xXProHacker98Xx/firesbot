@@ -5,7 +5,11 @@ const client = new Discord.Client(
 client.login(process.env.token)
 
 client.on("ready", () => {
-    console.log("Bot ONLINE")
+    console.log("The Bot is ONLINE");
+    client.user.setActivity("Sta guardando zFenyyx", {
+        type: "STREAMING",
+        url: "https://www.twitch.tv/zfenyyx"
+    });
 });
 
 client.on("messageCreate", message => {
