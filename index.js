@@ -11,11 +11,15 @@ client.on("ready", () => {
         url: "https://www.twitch.tv/zfenyyx"
     });
 });
-client.on("guildMemberAdd", (member) =>{
-    client.channels.cache.get("962419220241604678").send("Ciao carissimo e benvenuto tra di noi" + member.toString() + " **" + member.guild.name + "**\rSei il **" + member.guild.memberCount + "° membro**");
-})
-client.on("guildMemberRemove", (member) => {
-    client.channels.cache.get("962419220241604678").send(member.toString + " ha disertato,riportatelo al fronte con noi")
+client.on("guildMemberAdd", (member) => {
+    let channelId = "962419220241604678";
+    if(member.guild.id != "962419220241604678") return;
+    let embed = new Discord.MessageEmbed()
+    .setTitle(`Utente Entrato!!`)
+    .setDescription(`${member.user.tag} Ciao arissimo e benvenuto tra di noi`)
+    .setColor("ORANGE")
+    .setTimestamp()
+    channelId.send(embed)
 })
 client.on("messageCreate", message => {
     if (message.content == "!twitch") {
