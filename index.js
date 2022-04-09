@@ -25,7 +25,7 @@ client.on("guildMemberAdd", async member => {
   .setColor("message-box", "#FEFCFC")
   .setColor("border", "#000000")
   .setColor("avatar", "#FEFCFC")
-  .setBackground("https://cdn.discordapp.com/attachments/883825671888060456/962442498704306246/unknown.png")
+  .setBackground("https://media.discordapp.net/attachments/962419220241604678/962445224947368047/antonello-venditti-risveglio-della-fenicecopertinavecchio.png?width=864&height=584")
   .setMemberCount(member.guild.memberCount)
   let attachment = new Discord.MessageAttachment(await welcomeCard.build(), "welcome.png")
   member.guild.channels.cache.get("962419220241604678").send(member.user.toString(), attachment)
