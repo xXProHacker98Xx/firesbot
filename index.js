@@ -11,28 +11,7 @@ client.on("ready", () => {
         url: "https://www.twitch.tv/zfenyyx"
     });
 });
-const canvacord = require("canvacord")
 
-client.on("guildMemberAdd", async member => {
-  if(member.guild.id !== "960188446679396443") return;
-  const welcomeCard = new canvacord.Welcomer()
-  .setUsername(member.user.username)
-  .setDiscriminator(member.user.discriminator)
-  .setAvatar(member.user.displayAvatarURL({ format: "png" }))
-  .setColor("title", "#FEFCFC")
-  .setColor("username-box", "#FEFCFC")
-  .setColor("discriminator-box", "#FEFCFC")
-  .setColor("message-box", "#FEFCFC")
-  .setColor("border", "#000000")
-  .setColor("avatar", "#FEFCFC")
-  .setBackground("https://media.discordapp.net/attachments/962419220241604678/962445224947368047/antonello-venditti-risveglio-della-fenicecopertinavecchio.png?width=864&height=584")
-  .setMemberCount(member.guild.memberCount)
-  let attachment = new Discord.MessageAttachment(await welcomeCard.build(), "welcome.png")
-  member.guild.channels.cache.get("962419220241604678").send(member.user.toString(), attachment)
-})
-client.on("guildMemberRemove", (member) => {
-    client.channels.cache.get("962419220241604678").send( member.toString + " ha disertato,riportatelo al fronte con noi")
-})
 client.on("messageCreate", message => {
     if (message.content == "!twitch") {
         message.channel.send("@everyone Fenyx è in live con una nuovissima cacata pazzurdissimerrima: https://www.twitch.tv/zfenyyx")
@@ -42,3 +21,10 @@ client.on("messageCreate", message => {
         message.channel.send("Questa è la playlist di fenyx: https://open.spotify.com/playlist/0E0u0bHwzFolFaes7uG41v?si=b91dd9b07111471f")
     }
 });
+
+client.on("guildMemberAdd", (member) =>{
+    member.guild.channels.cache.get(welcomeChannelId).send({
+        content: `<@${member.id}> Ciao carissimo e benvenuto tra di noi!`,
+        files: {img}
+    })
+})
