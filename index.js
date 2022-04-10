@@ -14,8 +14,6 @@ client.on("ready", () => {
     });
 });
 
-let defaultPrefix = '!';
-
 client.on("messageCreate", message => {
     if (message.content == "!twitch") {
         message.channel.send("@everyone Fenyx è in live con una nuovissima cacata pazzurdissimerrima: https://www.twitch.tv/zfenyyx")
@@ -26,7 +24,7 @@ client.on("messageCreate", message => {
     }
 });
 
-if(message.content.startsWith(!ticket setup)){
+if(message.content.startsWith(!ticket-setup)){
     let channel = message.mentions.channels.first()
     let kate;
     let modrole = message.mentions.roles;
