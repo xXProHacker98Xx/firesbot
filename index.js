@@ -24,7 +24,7 @@ client.on("messageCreate", message => {
     }
 });
 
-if(message.content.startsWith(!ticket-setup)){
+if(message.content.startsWith(!tickets-setup)){
     let channel = message.mentions.channels.first()
     let kate;
     let modrole = message.mentions.roles;
