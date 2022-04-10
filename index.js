@@ -1,9 +1,10 @@
 const Discord = require("discord.js");
 const client = new Discord.Client(
     { intents: ["GUILDS", "GUILD_MEMBERS", "GUILD_MESSAGES"]});
+const prefix = require('discord-prefix');
 
 client.login(process.env.token)
-const prefix = require('discord-prefix');
+
 client.on("ready", () => {
     console.log("Il bot è online");
     client.user.setActivity("Sta guardando zFenyyx", {
