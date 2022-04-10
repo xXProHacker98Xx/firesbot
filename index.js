@@ -37,12 +37,12 @@ if(message.content.startsWith(!tickets-setup)){
 
     if(!channel) return message.channel.send({content: "E' nesessario specificare dove inviare il messaggio"});
 
-    if(!jate){
-        await message.guild.channels.create("Tickets". {
+    if(!kate){
+        await message.guild.channels.create("tickets", {
             type:"GUILD_CATEGORY",
-            PermissionOverwrites: [
-                {id:message.guild.id, deny:["VIEW_CHANNEL"]}
-                {id:btoa.user.id,allow:[VIEW_CHANNEL]}
+            PermissionOverwrites:[
+                {id:message.guild.id, deny:["VIEW_CHANNEL"]},
+                {id:bot.user.id,allow:[VIEW_CHANNEL]}
             ]
         }).then(l=>kate=l);
     }
