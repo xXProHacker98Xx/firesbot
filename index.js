@@ -1,7 +1,7 @@
 const Discord = require("discord.js");
 const client = new Discord.Client(
     { intents: ["GUILDS", "GUILD_MEMBERS", "GUILD_MESSAGES"]});
-const prefix = require('discord-prefix');
+const PREFIX = "!"
 const tickets = require("./tickets.json")
 
 client.login(process.env.token)
