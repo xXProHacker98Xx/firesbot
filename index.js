@@ -3,7 +3,7 @@ const client = new Discord.Client(
     { intents: ["GUILDS", "GUILD_MEMBERS", "GUILD_MESSAGES"]});
 
 client.login(process.env.token)
-
+const prefix = require('discord-prefix');
 client.on("ready", () => {
     console.log("Il bot è online");
     client.user.setActivity("Sta guardando zFenyyx", {
@@ -11,6 +11,8 @@ client.on("ready", () => {
         url: "https://www.twitch.tv/zfenyyx"
     });
 });
+
+let defaultPrefix = '!';
 
 client.on("messageCreate", message => {
     if (message.content == "!twitch") {
