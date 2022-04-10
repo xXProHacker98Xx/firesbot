@@ -31,7 +31,7 @@ if(message.content.startsWith(!tickets-setup)){
 
     message.guild.channel.cache.forEach(chn=>{
         if(chn.type == "GUILD_CATEGORY" && !kate && chn.name.toLowerCase() == "tickets"){
-            kate = chn:
+            kate = chn;
         }
     })
 
